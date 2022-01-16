@@ -1,0 +1,34 @@
+private Random random;
+private string name;
+private int points;
+
+
+public Player(string name, int points, Random random)
+{
+
+   _random = random;
+    _name = name;
+    _points = points;
+
+}
+
+public void Play(Player player2)
+{
+    var winner = _random.Next(2) == 0 ? this : player2; 
+    var loser = winner == this ? player2 : this;
+    winner._points += 1;
+    loser._points -= 1;
+
+
+}
+
+public void ShowNameAndPoints()
+{
+    Console.WriteLine(_.name.PadRight(12) + _.points.ToString().PadLeft(3));
+
+}
+
+
+
+}
+}
